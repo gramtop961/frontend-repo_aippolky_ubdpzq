@@ -1,28 +1,44 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <section id="sobre" className="py-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">Sobre a Elion</h2>
+            <p className="mt-4 text-gray-600">
+              Somos um estúdio de engenharia de software focado em transformar ideias em produtos digitais reais. Atuamos desde a descoberta e design até a construção e evolução contínua.
+            </p>
+            <ul className="mt-6 grid grid-cols-2 gap-3 text-sm">
+              <li className="rounded-lg border border-gray-200 bg-white p-3">+5 anos de mercado</li>
+              <li className="rounded-lg border border-gray-200 bg-white p-3">Time especialista</li>
+              <li className="rounded-lg border border-gray-200 bg-white p-3">Metodologia ágil</li>
+              <li className="rounded-lg border border-gray-200 bg-white p-3">Qualidade garantida</li>
+            </ul>
+          </div>
+          <div>
+            <div className="aspect-video rounded-2xl border border-gray-200 bg-gradient-to-br from-indigo-100 via-violet-100 to-fuchsia-100" />
+          </div>
         </div>
       </div>
-    </div>
-  )
+    </section>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+      </main>
+      <Footer />
+    </div>
+  );
+}
